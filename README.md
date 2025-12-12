@@ -210,103 +210,8 @@ The backtest returns comprehensive performance metrics:
 
 
 ## DSL Grammar Reference
-
-### Basic Structure
-
-```
-ENTRY:
-  <condition>
-
-EXIT:
-  <condition>
-```
-
-### Available Fields
-
-- `open` - Opening price
-- `high` - Highest price
-- `low` - Lowest price
-- `close` - Closing price
-- `volume` - Trading volume
-
-### Available Indicators
-
-| Indicator | Syntax | Description |
-|-----------|--------|-------------|
-| Simple Moving Average | `SMA(field, period)` | Average over N periods |
-| Exponential Moving Average | `EMA(field, period)` | Weighted average favoring recent data |
-| Relative Strength Index | `RSI(field, period)` | Momentum oscillator (0-100) |
-| Previous Value | `PREV(field, N)` | Value from N periods ago |
-
-### Operators
-
-**Comparison:**
-- `>` - Greater than
-- `<` - Less than
-- `>=` - Greater than or equal
-- `<=` - Less than or equal
-- `==` - Equal to
-- `CROSSES_ABOVE` - Current > threshold AND previous <= threshold
-- `CROSSES_BELOW` - Current < threshold AND previous >= threshold
-
-**Logical:**
-- `AND` - Both conditions must be true
-- `OR` - At least one condition must be true
-
-**Arithmetic:**
-- `+` - Addition
-- `-` - Subtraction
-- `*` - Multiplication
-- `/` - Division
-
-### DSL Examples
-
-#### Example 1: Simple Moving Average Crossover
-```
-ENTRY:
-  close CROSSES_ABOVE SMA(close, 50)
-
-EXIT:
-  close CROSSES_BELOW SMA(close, 50)
-```
-
-#### Example 2: RSI Mean Reversion
-```
-ENTRY:
-  RSI(close, 14) < 30
-
-EXIT:
-  RSI(close, 14) > 70
-```
-
-#### Example 3: Volume + Price Breakout
-```
-ENTRY:
-  close > PREV(high, 1) AND volume > PREV(volume, 1) * 1.5
-
-EXIT:
-  close < SMA(close, 20)
-```
-
-#### Example 4: Multiple Conditions
-```
-ENTRY:
-  close > SMA(close, 20) AND close > SMA(close, 50) AND volume > 1000000
-
-EXIT:
-  RSI(close, 14) < 30 OR close < SMA(close, 20)
-```
-
-#### Example 5: Arithmetic Operations
-```
-ENTRY:
-  close > SMA(close, 20) * 1.05 AND volume > PREV(volume, 7) * 1.30
-
-EXIT:
-  close < SMA(close, 20) * 0.95
-```
-
----
+Full DSL syntax and grammar specification is available here:
+[DSL_GRAMMAR.md](github.com/ayush-agarwal-12/Backtesting-trading-strategy/blob/main/docs/DSL_GRAMMER.md)
 
 ## File Structure
 
@@ -363,3 +268,4 @@ export GROQ_API_KEY='your-key-here'
 
 
 ---
+
