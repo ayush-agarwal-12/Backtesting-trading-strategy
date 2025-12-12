@@ -211,7 +211,7 @@ The backtest returns comprehensive performance metrics:
 
 ## DSL Grammar Reference
 Full DSL syntax and grammar specification is available here:
-[DSL_GRAMMAR.md](docs/DSL_GRAMMAR.md)
+[DSL_GRAMMAR.md](docs/DSL_GRAMMER.md)
 
 ## File Structure
 
@@ -268,5 +268,6 @@ export GROQ_API_KEY='your-key-here'
 
 
 ---
+
 
 
