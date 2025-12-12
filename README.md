@@ -319,8 +319,9 @@ EXIT:
 |-- code_generator.py     # AST → Python code
 |-- indicators.py         # Technical indicator implementations
 |-- backtest.py           # Backtesting engine
-|-- Design.md             # Why these tools + what's next
-|-- DSL_GRAMMAR.md        # Full DSL grammar specification
+|-- docs
+    |-- Design.md         # Why these tools + what's next
+    |-- DSL_GRAMMAR.md    # Full DSL grammar specification        
 |-- README.md             # Main documentation and usage guide
 
 ```
@@ -359,5 +360,6 @@ export GROQ_API_KEY='your-key-here'
 **Issue: Different results on each run**
 - Use `run_from_dsl()` instead of `run()` for determinism
 - Use fixed date ranges instead of `period="max"`
+
 
 ---
